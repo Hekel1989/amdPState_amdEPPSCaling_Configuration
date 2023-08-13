@@ -1,5 +1,5 @@
 # AMD P-State and AMD P-State EPP Scaling Driver Configuration Guide
-Hi everyone, during the past weeks I've sunk into the magical world of AMD P-States, and, I ended up putting together a quick post that I thought might be useful for someone else.
+Hi everyone, during the past weeks I've sunk into the magical world of AMD P-States, and, I ended up putting together a quick post that I thought might be useful to someone else.
 
 I'm a Linux amateur, so this could be very much wrong, but I'm very much open to any corrections or improvements :)
 
@@ -145,7 +145,7 @@ If you'd like to set the same EPP hint across all cores, for instance, setting E
 echo "power" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference
 power
 ```
->**NOTE: This is not permament, and will be reverted upon reboot. To make this permanent, you can use multiple tools, or, create a cron job**
+>**NOTE: This is not permanent, and will be reverted upon reboot. To make this permanent, you can use multiple tools, or, create a cron job**
 
 ## 4. Scaling Driver vs CPU Governor
 
@@ -180,6 +180,15 @@ powersave
 If you've configured `amd_pstate=active`, you can mix and match governors with EPP hints. Phoronix has an excellent breakdown of all the combinations of governors + EPP hints (referenced in the resources section at the end of this post).
 
 Personally, for my laptop usage, I still find `amd_pstate=passive` to be the best for my use case, but YMMV depending on the devices you're configuring this on, and your use case :)
+
+## 5. [OPTIONAL] Automating EPP Switching when on Battery/AC
+
+Thanks to the amazing work of [/jothiprasath](https://www.reddit.com/user/jothiprasath/), we've can now switch EPP Hints automatically when going from Battery to AC, and viceversa.
+
+Here's the link to his amazing work [Auto-EPP](https://github.com/jothi-prasath/auto-epp)
+
+>**NOTE: This hasn't been written by me and I've yet to test it, please make sure you have reviewed the code before deploying it to your machines**
+
 
 ### Resources:
 - an amazing Redditor (whose post I cannot find anymore) that served as a basis for this very post (if anyone finds it, please do let me know, and I'll reference them right away)
