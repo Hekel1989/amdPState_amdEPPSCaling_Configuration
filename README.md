@@ -1,7 +1,4 @@
 # AMD P-State and AMD P-State EPP Scaling Driver Configuration Guide
-Hi everyone, during the past weeks I've sunk into the magical world of AMD P-States, and, I ended up putting together a quick post that I thought might be useful to someone else.
-
-I'm a Linux amateur, so this could be very much wrong, but I'm very much open to any corrections or improvements :)
 
 ## 1. Requirements
 
